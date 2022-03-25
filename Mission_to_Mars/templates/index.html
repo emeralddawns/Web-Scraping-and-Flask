@@ -23,8 +23,27 @@
     <br/>
         {{mars.mars_table_html}}
     <br/>
-    {#<img src="{{ mars.hemisphere_image_urls[0]['Link']}}" alt="Hemisphere">#}
-    {#<figcaption>{{mars.hemisphere_image_urls[0]['Title']}}</figcaption>#}
+    <img src="{{ mars.hemisphere_image_urls[0]['link']}}" alt="Hemisphere">
+    <figcaption>{{mars.hemisphere_image_urls[0]['title']}}</figcaption>
+
+    <div class="container">
+        <div class="row">
+
+            <div class="col-sm-3 col-md-12 col-xxl-6">
+              <img src="assets/images/MaxTvsLat.svg" class="img-fluid" title="Maximum Temperature vs Latitude" alt="Maximum Temperature vs Latitude">
+            </div>
+            <div class="col-sm-3 col-md-12 col-xxl-6">
+              <img src="assets/images/HumVsLat.svg" class="img-fluid" title="Humidity vs Latitude" alt="Humidity vs Latitude">
+            </div>
+            <div class="col-sm-3 col-md-12 col-xxl-6">
+              <img src="assets/images/CloudVsLat.svg" class="img-fluid" title="Cloudiness vs Latitude" alt="Cloudiness vs Latitude">
+            </div>
+            <div class="col-sm-3 col-md-12 col-xxl-6">
+              <img src="assets/images/WSpdVsLat.svg" class="img-fluid" title="Wind Speed vs Latitude" alt="Wind Speed vs Latitude">
+            </div>
+  </div>
+</div>
+
   </div>
 </body>
 

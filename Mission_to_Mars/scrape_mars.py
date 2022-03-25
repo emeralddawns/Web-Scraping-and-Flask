@@ -52,7 +52,7 @@ def scrape_info():
         soup = bs(html, 'html.parser')
         img = soup.find("div", class_ = "downloads").find("ul").find("li").find("a")["href"]
         img_url = url + img
-        hemisphere_image_urls.append({"Title": img_title, "Link": img_url})
+        hemisphere_image_urls.append({"title": img_title, "link": img_url})
 
     # Store data in a dictionary
     mars_data = {
