@@ -34,9 +34,9 @@ def scrape_info():
     mars_table = tables[0]
     mars_table = mars_table.rename(columns={0: "Description", 1: "Mars", 2: "Earth"})
     mars_table.set_index("Description", inplace = True)
-    mars_table_html = mars_table.to_html("mars_table.html")
+    mars_table_html = mars_table.to_html("mars_table_html.html")
 
-    # Mars Hemispheres
+    #Mars Hemispheres
     url = "https://marshemispheres.com/"
     response = requests.get(url)
     soup = bs(response.text, 'lxml')
