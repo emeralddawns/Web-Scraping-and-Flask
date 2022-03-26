@@ -33,8 +33,10 @@ def scrape_info():
     tables = pd.read_html(url)
     mars_table = tables[0]
     mars_table = mars_table.rename(columns={0: "Description", 1: "Mars", 2: "Earth"})
+    mars_table = mars_table.iloc[1: , :]
     mars_table.set_index("Description", inplace = True)
-    mars_table_html = mars_table.to_html("mars_table_html.html")
+    mars_table.index.name=None
+    mars_table_html = mars_table.to_html(classes = 'table table-striped table-bordered table-hover')
 
     #Mars Hemispheres
     url = "https://marshemispheres.com/"
@@ -62,9 +64,6 @@ def scrape_info():
         "mars_table_html": mars_table_html,
         "hemisphere_image_urls": hemisphere_image_urls
     }
-
-
-
 
     # Close the browser after scraping
     browser.quit()

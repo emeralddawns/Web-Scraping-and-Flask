@@ -19,34 +19,36 @@
     </div>
 
 <!-- News -->
-    <div class="container h-100" id="section">
-        <div class="row h-100">
+        <div class="row h-100" id="section">
             <div class="wrapper col overflow-auto bg-light h-100"> 
                 <h2 class = "text-center">Mars News</h2>
                 <hr>
-                  <div >  
+                  <div>
                     <h5 class = "text-center">{{ mars.news_title }}</h5>
                     <p class = "text-center">{{ mars.news_p }}</p>
                   </div>        
             </div>
         </div>
-    </div>
 
 <!-- Featured Image and Table -->
-    <div class="container h-100" id="section">
-        <div class="row h-100">
+        <div class="row h-100" id="section">
             <div class="wrapper col overflow-auto bg-light h-100"> 
-                <h2 class = "text-center">Featured Image and Table</h2>
+                <h2 class = "text-center">Featured Image and Facts</h2>
                 <hr>
-                  <div >
-                      <figure>
-                        <img src="{{ mars.featured_image_url }}" class="img-fluid float-start pull-start me-2" title="Featured Mars Image" alt="Featured_Mars_Image">    
-                      </figure>
-<!-- Put a table here -->
-                  </div>        
+                <div class="container">
+                    <div class="row">                    
+                        <div class = "col-md-12 col-lg-6">
+                            <figure>
+                                <img src="{{ mars.featured_image_url }}" class="img-fluid float-start pull-start me-2" id = "featured" title="Featured Mars Image" alt="Featured_Mars_Image">    
+                            </figure>
+                        </div>  
+                        <div class = "col-md-12 col-lg-6">
+                            {{ mars.mars_table_html | safe}}                      
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
-    </div>
 
 <!-- Hemispheres -->
     <div class="bg-light" id="section">
@@ -87,6 +89,6 @@
         </div>
     </div>
   </div>
-</body>
-
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    </body>
 </html>

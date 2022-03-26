@@ -1,9 +1,19 @@
-figure {
-    padding-bottom: 2rem;
-  }
+figure{
+  padding-bottom: 1rem;  
+}
+
 
 #section {
     margin: 2%;
     padding-top: 1.5rem;
     padding-bottom: 1.5rem; 
   }
+
+#featured{
+  padding-bottom: 2rem;  
+}
+
+
+thead th {
+    text-align: left;
+}
