@@ -6,74 +6,77 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Mars!</title>
-  <link href="style.css" rel="stylesheet" type="text/css">
+  <link href="../static/style.css" rel="stylesheet" type="text/css">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
 </head>
 
+<!-- Button -->
 <body>
   <div class="container-fluid">
     <div class="jumbotron text-center">
       <h1>Mars Information Scraper</h1>
       <p><a class="btn btn-primary btn-lg" href="/scrape" role="button">Collect News!</a></p>
     </div>
-    <h2>Mars News and Images:</h2>
-    <h5>{{ mars.news_title }}</h5>
-    <h6>{{ mars.news_p }}</h6>
-    <br/>
-    <img src="{{ mars.featured_image_url }}" alt="Featured_Mars_Image">
-    <br/>
-        {{mars.mars_table_html}}
-    <br/>
 
-
-    <div class="container-fluid h-100">
+<!-- News -->
+    <div class="container h-100" id="section">
         <div class="row h-100">
-            <div class="wrapper col overflow-auto bg-light h-100 py-5" id="Summary"> 
-                <h1 class = "text-center">{{ mars.news_title }}</h1>
+            <div class="wrapper col overflow-auto bg-light h-100"> 
+                <h2 class = "text-center">Mars News</h2>
                 <hr>
-                  <div >
-                    <img src="{{ mars.featured_image_url }}" class="img-fluid float-start pull-start me-2" title="Featured Mars Image" alt="Featured_Mars_Image">           
-                    <p>This project analyzed the relationship between latitude and local weather conditions in 500+ cities in both the Northern and Southern Hemispheres. This site contains plots for cloudiness (%), humidity (%), maximum temperature (F), and wind speed (mph). The data used to create these plots is also included.</p>
-                    <p>{{ mars.news_p }}</p>
+                  <div >  
+                    <h5 class = "text-center">{{ mars.news_title }}</h5>
+                    <p class = "text-center">{{ mars.news_p }}</p>
                   </div>        
             </div>
+        </div>
+    </div>
 
+<!-- Featured Image and Table -->
+    <div class="container h-100" id="section">
+        <div class="row h-100">
+            <div class="wrapper col overflow-auto bg-light h-100"> 
+                <h2 class = "text-center">Featured Image and Table</h2>
+                <hr>
+                  <div >
+                      <figure>
+                        <img src="{{ mars.featured_image_url }}" class="img-fluid float-start pull-start me-2" title="Featured Mars Image" alt="Featured_Mars_Image">    
+                      </figure>
+<!-- Put a table here -->
+                  </div>        
+            </div>
+        </div>
+    </div>
 
-
-
-
-
-
-
-
-    <div class="bg-light" id = "Visualizations">
+<!-- Hemispheres -->
+    <div class="bg-light" id="section">
         <div class="container bg-light">
-        <h2 class = "text-center">Martian Hemispheres</h2>
+        <h2 class = "text-center">Mars Hemispheres</h2>
         <hr>
             <div class="container">
                 <div class="row">
                     <div class="col-sm-3 col-md-12 col-xxl-6">
                         <figure>
                             <img src="{{ mars.hemisphere_image_urls[0]['link']}}" class="img-fluid" title="{{mars.hemisphere_image_urls[0]['title']}}" alt="{{mars.hemisphere_image_urls[0]['title']}}">
-                            <figcaption class="text-center" id = "hemi_caption">{{mars.hemisphere_image_urls[0]['title']}}</figcaption>
+                            <figcaption class="text-center">{{mars.hemisphere_image_urls[0]['title']}}</figcaption>
                         </figure>
                     </div>
                     <div class="col-sm-3 col-md-12 col-xxl-6">
                         <figure>
                             <img src="{{ mars.hemisphere_image_urls[1]['link']}}" class="img-fluid" title="{{mars.hemisphere_image_urls[1]['title']}}" alt="{{mars.hemisphere_image_urls[1]['title']}}">
-                            <figcaption class="text-center" id = "hemi_caption">{{mars.hemisphere_image_urls[1]['title']}}</figcaption>
+                            <figcaption class="text-center">{{mars.hemisphere_image_urls[1]['title']}}</figcaption>
                         </figure>
                     </div>
                     <div class="col-sm-3 col-md-12 col-xxl-6">
                         <figure>
                             <img src="{{ mars.hemisphere_image_urls[2]['link']}}" class="img-fluid" title="{{mars.hemisphere_image_urls[2]['title']}}" alt="{{mars.hemisphere_image_urls[2]['title']}}">
-                            <figcaption class="text-center" id = "hemi_caption">{{mars.hemisphere_image_urls[2]['title']}}</figcaption>
+                            <figcaption class="text-center">{{mars.hemisphere_image_urls[2]['title']}}</figcaption>
                         </figure>
                     </div>
                     <div class="col-sm-3 col-md-12 col-xxl-6">
                         <figure>
                             <img src="{{ mars.hemisphere_image_urls[3]['link']}}" class="img-fluid" title="{{mars.hemisphere_image_urls[3]['title']}}" alt="{{mars.hemisphere_image_urls[3]['title']}}">
-                            <figcaption class="text-center" id = "hemi_caption">{{mars.hemisphere_image_urls[3]['title']}}</figcaption>
+                            <figcaption class="text-center">{{mars.hemisphere_image_urls[3]['title']}}</figcaption>
                         </figure>
                     </div>
 
