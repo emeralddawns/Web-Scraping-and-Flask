@@ -57,7 +57,17 @@
         <hr>
             <div class="container">
                 <div class="row">
-                    <div class="col-sm-3 col-md-12 col-xxl-6">
+                    {% for hemisphere in mars.hemisphere_image_urls %}
+                        <div class="col-sm-3 col-md-12 col-xxl-6">
+                            <figure>
+                                <img src="{{ hemisphere.link}}" class="img-fluid" title="{{hemisphere.link}}" alt="{{hemisphere.link}}">
+                                <figcaption class="text-center">{{hemisphere.title}}</figcaption>
+                            </figure>
+                        </div>
+                    {% endfor %}
+
+
+                    <!-- {# <div class="col-sm-3 col-md-12 col-xxl-6">
                         <figure>
                             <img src="{{ mars.hemisphere_image_urls[0]['link']}}" class="img-fluid" title="{{mars.hemisphere_image_urls[0]['title']}}" alt="{{mars.hemisphere_image_urls[0]['title']}}">
                             <figcaption class="text-center">{{mars.hemisphere_image_urls[0]['title']}}</figcaption>
@@ -80,7 +90,7 @@
                             <img src="{{ mars.hemisphere_image_urls[3]['link']}}" class="img-fluid" title="{{mars.hemisphere_image_urls[3]['title']}}" alt="{{mars.hemisphere_image_urls[3]['title']}}">
                             <figcaption class="text-center">{{mars.hemisphere_image_urls[3]['title']}}</figcaption>
                         </figure>
-                    </div>
+                    </div> #} -->
 
 
                     </div>
@@ -88,7 +98,6 @@
             </div>
         </div>
     </div>
-  </div>
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+          <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
     </body>
 </html>
